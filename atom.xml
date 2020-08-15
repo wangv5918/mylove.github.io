@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ww13606467972.github.io/mylove.github.io/</id>
     <title>Mylove</title>
-    <updated>2020-08-15T02:38:34.686Z</updated>
+    <updated>2020-08-15T07:39:16.414Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ww13606467972.github.io/mylove.github.io/"/>
     <link rel="self" href="https://ww13606467972.github.io/mylove.github.io/atom.xml"/>
@@ -1499,7 +1499,7 @@ for (var i=0;i&lt;lis.length;i++) {
 <p>①首先表单需要2个新事件,获得点onfocus失法焦点onblur<br>
 ②如果获得焦点，判断表单里面内容是否为默认文字,如果是默认文字,就清空表单内容<br>
 ③如果失去焦点,判断表单内容是否为空,如果为空,则表单内容改为默认文字</p>
-<figure data-type="image" tabindex="111"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Ccode1.png" alt="code1" loading="lazy"></figure>
+<figure data-type="image" tabindex="111"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/code1.png" alt="code1" loading="lazy"></figure>
 <h5 id="2-tab栏切换">2. tab栏切换</h5>
 <h3 id="3-事件高级">3. 事件高级</h3>
 <h4 id="31-注册事件-绑定事件">3.1 注册事件  （绑定事件）</h4>
@@ -1831,7 +1831,7 @@ windows.addEventListener('resize',function(){})
 <h5 id="4-缓动效果原理">4. 缓动效果原理</h5>
 <p>缓动动画就是让元素运动速度有所变化,最常见的是让速度慢慢停下来</p>
 <p><mark>核心算法：（目标值-现在的位置）/10 作为每次移动的距离步 长</mark></p>
-<img src="C:\Users\lenovo\Documents\Gridea\post-images\animate.png" alt="animate" style="zoom: 50%;" />
+<img src="file://C:/Users/lenovo/Documents/Gridea/post-images/animate.png" alt="animate" style="zoom: 50%;" />
 <h5 id="5-动画函数添加回调函数">5. 动画函数添加回调函数</h5>
 <p>回调函数原理:函数可以作为一个参数。 将这个函数作为参数传到另一个函数里面,当那个函数执行完之后<br>
 ,再执行传进去的这个函数,这个过程就叫做回调。</p>
@@ -1839,7 +1839,7 @@ windows.addEventListener('resize',function(){})
 <h4 id="5-节流阀">5. 节流阀</h4>
 <p>防止轮播图按钮连续点击造成播放过快</p>
 <p>节流阀目的:当上一一个函数动画内容执行完毕,再去执行下一个函数动画,让事件无法连续触发。</p>
-<figure data-type="image" tabindex="148"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200623091056009.png" alt="image-20200623091056009" loading="lazy"></figure>
+<figure data-type="image" tabindex="148"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200623091056009.png" alt="image-20200623091056009" loading="lazy"></figure>
 <p>案例：品优购轮播图</p>
 <h3 id="6-移动端网页特效">6. 移动端网页特效</h3>
 <h4 id="1-触屏事件">1. 触屏事件</h4>
@@ -1848,13 +1848,13 @@ windows.addEventListener('resize',function(){})
 端也有自己独特的地方。比如触屏事件touch (也称触摸事件) , Android和I0S都有。</p>
 <p>touch对象代表一个触摸点。 触摸点可能是一根手指,也可能是一根触摸笔。触屏事件可响应用户手指(或触控<br>
 笔)对屏幕或者触控板操作。</p>
-<figure data-type="image" tabindex="149"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200623094622135.png" alt="image-20200623094622135" loading="lazy"></figure>
+<figure data-type="image" tabindex="149"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200623094622135.png" alt="image-20200623094622135" loading="lazy"></figure>
 <h5 id="12触摸事件对象">1.2.触摸事件对象</h5>
 <p>TouchEvent是一类描述手指在触摸平面(触摸屏、触摸板等)的状态变化的事件。这类事件用于描述一个或多<br>
 个触点,使研发者可以检测触点的移动,触点的增加和减少,等等<br>
 touchstart、touchmove、touchend 三个事件都会各自有事件对象。<br>
 触摸事件对象重点我们看三个常见对象列表:</p>
-<figure data-type="image" tabindex="150"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200626092947245.png" alt="image-20200626092947245" loading="lazy"></figure>
+<figure data-type="image" tabindex="150"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200626092947245.png" alt="image-20200626092947245" loading="lazy"></figure>
 <h5 id="13-移动端拖动元素">1.3 移动端拖动元素</h5>
 <ol>
 <li>touchstart、touchmove、 touchend 可以实现拖动元素</li>
@@ -1862,7 +1862,7 @@ touchstart、touchmove、touchend 三个事件都会各自有事件对象。<br>
 <li>移动端拖动原理：手指移动中，计算出手指移动的距离。盒子原来的距离+手指移动的距离</li>
 <li>手指移动的距离：手指滑动中的位置-手指触摸的位置</li>
 </ol>
-<figure data-type="image" tabindex="151"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200626094535511.png" alt="image-20200626094535511" loading="lazy"></figure>
+<figure data-type="image" tabindex="151"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200626094535511.png" alt="image-20200626094535511" loading="lazy"></figure>
 <p>案例：携程移动端-轮播图</p>
 <h5 id="14-classlist-属性">1.4  classList 属性</h5>
 <p>h5新增属性，返回元素的类名（ie 10 以上）</p>
@@ -1883,10 +1883,10 @@ element.classList.toggle('类名');  切换类
 </li>
 <li>
 <p>利用touch事件封装</p>
-<figure data-type="image" tabindex="152"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200628082417630.png" alt="image-20200628082417630" loading="lazy"></figure>
+<figure data-type="image" tabindex="152"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200628082417630.png" alt="image-20200628082417630" loading="lazy"></figure>
 </li>
 </ol>
-<figure data-type="image" tabindex="153"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200628082608189.png" alt="image-20200628082608189" loading="lazy"></figure>
+<figure data-type="image" tabindex="153"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200628082608189.png" alt="image-20200628082608189" loading="lazy"></figure>
 <h4 id="3-移动端常见开发插件">3. 移动端常见开发插件</h4>
 <p>移动端要求的是快速开发,所以我们经常会借助于些插件来帮我完成操作 ,那么什么是插件呢?<br>
 JS插件是js文件,它遵循一定规范编写,方便程序展示效果, 拥有特定功能且方便调用。如轮播图和瀑布流插件。<br>
@@ -1895,10 +1895,10 @@ JS插件是js文件,它遵循一定规范编写,方便程序展示效果, 拥有
 <h5 id="移动端视频插件zymediajs">移动端视频插件：zy.media.js</h5>
 <h5 id="swiper-轮播图插件">Swiper 轮播图插件</h5>
 <p>插件使用：</p>
-<figure data-type="image" tabindex="154"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200628153236689.png" alt="image-20200628153236689" loading="lazy"></figure>
+<figure data-type="image" tabindex="154"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200628153236689.png" alt="image-20200628153236689" loading="lazy"></figure>
 <h3 id="7-本地存储">7. 本地存储</h3>
 <h4 id="本地存储特性">本地存储特性</h4>
-<figure data-type="image" tabindex="155"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200629080856261.png" alt="image-20200629080856261" loading="lazy"></figure>
+<figure data-type="image" tabindex="155"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200629080856261.png" alt="image-20200629080856261" loading="lazy"></figure>
 <h4 id="windowsessionstorage">window.sessionStorage</h4>
 <ol>
 <li>生命周期为关闭浏览器窗口（当前页面）</li>
@@ -1928,8 +1928,8 @@ localStorage.clear()  //删除所有的数据
 是在这个库中,封装了很多预先定义好的函数在里面,比如动画animate、hide、 show ,比如获取元素等。</p>
 <p>简单理解:就是一个JS 文件,里面对我们原生js代码进行了封装,存放到里面。这样我们可以快速高效的使用<br>
 这些封装好的功能了。</p>
-<figure data-type="image" tabindex="156"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630081647390.png" alt="image-20200630081647390" loading="lazy"></figure>
-<figure data-type="image" tabindex="157"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630082025445.png" alt="image-20200630082025445" loading="lazy"></figure>
+<figure data-type="image" tabindex="156"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630081647390.png" alt="image-20200630081647390" loading="lazy"></figure>
+<figure data-type="image" tabindex="157"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630082025445.png" alt="image-20200630082025445" loading="lazy"></figure>
 <h4 id="2-jquery-入口函数">2. jQuery 入口函数</h4>
 <pre><code class="language-javascript">$(function(){
    ..//此处是页面DOM加载完成的入口
@@ -1939,9 +1939,9 @@ $(document).ready(function(){
    ...//此处是页面DOM加载完成的入口
 });
 </code></pre>
-<figure data-type="image" tabindex="158"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630083708024.png" alt="image-20200630083708024" loading="lazy"></figure>
+<figure data-type="image" tabindex="158"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630083708024.png" alt="image-20200630083708024" loading="lazy"></figure>
 <h4 id="3-jquery-的顶级对象">3. jQuery 的顶级对象$</h4>
-<figure data-type="image" tabindex="159"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630084212462.png" alt="image-20200630084212462" loading="lazy"></figure>
+<figure data-type="image" tabindex="159"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630084212462.png" alt="image-20200630084212462" loading="lazy"></figure>
 <h4 id="4-jquery对象和dom对象">4. jQuery对象和DOM对象</h4>
 <p>DOM对象：通过原生js获取过来的对象</p>
 <p>jQuery对象：用jQuery方式获取过来的对象。</p>
@@ -1957,34 +1957,34 @@ $(myvideo);//从原生DOM转化为jQuery对象
 
 $('video')[index]  //jQuery对象转化为DOM对象
 </code></pre>
-<figure data-type="image" tabindex="160"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630155831830.png" alt="image-20200630155831830" loading="lazy"></figure>
+<figure data-type="image" tabindex="160"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630155831830.png" alt="image-20200630155831830" loading="lazy"></figure>
 <h3 id="jquery-常用api">jQuery 常用API</h3>
 <h4 id="1-jquery-选择器">1. jQuery 选择器</h4>
 <pre><code class="language-javascript">$('选择器')//里面选择器直接写css选择器即可。但是要加引号
 </code></pre>
-<figure data-type="image" tabindex="161"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630160153767.png" alt="image-20200630160153767" loading="lazy"></figure>
-<figure data-type="image" tabindex="162"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630160747419.png" alt="image-20200630160747419" loading="lazy"></figure>
-<figure data-type="image" tabindex="163"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200630161122677.png" alt="image-20200630161122677" loading="lazy"></figure>
+<figure data-type="image" tabindex="161"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630160153767.png" alt="image-20200630160153767" loading="lazy"></figure>
+<figure data-type="image" tabindex="162"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630160747419.png" alt="image-20200630160747419" loading="lazy"></figure>
+<figure data-type="image" tabindex="163"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200630161122677.png" alt="image-20200630161122677" loading="lazy"></figure>
 <h5 id="1-隐式迭代">1.  隐式迭代</h5>
 <p>遍历内部DOM元素(伪数组形式存储)的过程就叫做隐式迭代。<br>
 简单理解:给匹配到的所有元素进行循环遍历,执行相应的方法,而不用我们再进行循环,简化我们的操作,<br>
 方便我们调用。</p>
 <h5 id="2-jquery筛选选择器">2. jQuery筛选选择器</h5>
-<figure data-type="image" tabindex="164"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701075513576.png" alt="image-20200701075513576" loading="lazy"></figure>
+<figure data-type="image" tabindex="164"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701075513576.png" alt="image-20200701075513576" loading="lazy"></figure>
 <h5 id="3-jquery筛选方法">3. jQuery筛选方法</h5>
-<figure data-type="image" tabindex="165"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701075800053.png" alt="image-20200701075800053" loading="lazy"></figure>
+<figure data-type="image" tabindex="165"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701075800053.png" alt="image-20200701075800053" loading="lazy"></figure>
 <h4 id="2-jquery样式操作">2. jQuery样式操作</h4>
 <h5 id="css方法">CSS方法</h5>
-<figure data-type="image" tabindex="166"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701153701958.png" alt="image-20200701153701958" loading="lazy"></figure>
+<figure data-type="image" tabindex="166"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701153701958.png" alt="image-20200701153701958" loading="lazy"></figure>
 <p>其中3，如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号</p>
 <h5 id="设置类样式方法"><mark>设置类样式方法</mark></h5>
 <p>作用等同于以前的classList ,可以操作类样式,注意操作类里面的参数不要加点。</p>
-<figure data-type="image" tabindex="167"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701154557537.png" alt="image-20200701154557537" loading="lazy"></figure>
+<figure data-type="image" tabindex="167"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701154557537.png" alt="image-20200701154557537" loading="lazy"></figure>
 <h5 id="类操作与classname区别">类操作与className区别</h5>
 <p>原生JS中className会覆元素原先里面的名。<br>
 jQuery里面类操作只是对指定类进行操作,不影响原先的类名。</p>
 <h4 id="3-jquery-动画效果">3.  jQuery 动画效果</h4>
-<figure data-type="image" tabindex="168"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701183950514.png" alt="image-20200701183950514" loading="lazy"></figure>
+<figure data-type="image" tabindex="168"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701183950514.png" alt="image-20200701183950514" loading="lazy"></figure>
 <h5 id="显示隐藏效果">显示隐藏效果</h5>
 <pre><code class="language-javascript">show([speed],[easing],[fn])
 //参数都可以省略。无动画直接显示
@@ -2005,21 +2005,21 @@ jQuery里面类操作只是对指定类进行操作,不影响原先的类名。<
 </code></pre>
 <h5 id="动画队列及停止排队方法">动画队列及停止排队方法</h5>
 <p>动画或者效果一旦触发就会执行,如果多次触发, 就造成多个动画或者效果排队执行。</p>
-<figure data-type="image" tabindex="169"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701190340749.png" alt="image-20200701190340749" loading="lazy"></figure>
+<figure data-type="image" tabindex="169"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701190340749.png" alt="image-20200701190340749" loading="lazy"></figure>
 <h5 id="淡入淡出效果">淡入淡出效果</h5>
-<figure data-type="image" tabindex="170"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701191911525.png" alt="image-20200701191911525" loading="lazy"></figure>
+<figure data-type="image" tabindex="170"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701191911525.png" alt="image-20200701191911525" loading="lazy"></figure>
 <h5 id="自定义动画">自定义动画</h5>
-<figure data-type="image" tabindex="171"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200701192355973.png" alt="image-20200701192355973" loading="lazy"></figure>
+<figure data-type="image" tabindex="171"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200701192355973.png" alt="image-20200701192355973" loading="lazy"></figure>
 <h4 id="4-jquery-属性操作">4. jQuery 属性操作</h4>
 <h5 id="设置或获取元素的固有属性值prop">设置或获取元素的固有属性值prop()</h5>
 <p>所谓元素固有属性就是元素本身自带的属性,比如<a>元素里面的href, 比如<input>元素里面的type.</p>
-<figure data-type="image" tabindex="172"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200702150433586.png" alt="image-20200702150433586" loading="lazy"></figure>
+<figure data-type="image" tabindex="172"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200702150433586.png" alt="image-20200702150433586" loading="lazy"></figure>
 <h5 id="设置或获取元素自定义属性值attr">设置或获取元素自定义属性值attr()</h5>
 <p>用户自定义元素添加的属性，栗给div添加index=&quot;1&quot;</p>
-<figure data-type="image" tabindex="173"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200702151037231.png" alt="image-20200702151037231" loading="lazy"></figure>
+<figure data-type="image" tabindex="173"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200702151037231.png" alt="image-20200702151037231" loading="lazy"></figure>
 <h5 id="数据缓存data">数据缓存data()</h5>
 <p>data()方法可以在指定的元素上存取数据,并不会修改DOM元素结构。一旦面刷新,之前存放的数据都将被移除。</p>
-<figure data-type="image" tabindex="174"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200702151339064.png" alt="image-20200702151339064" loading="lazy"></figure>
+<figure data-type="image" tabindex="174"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200702151339064.png" alt="image-20200702151339064" loading="lazy"></figure>
 <h5 id="案例品优购购物车全选按钮">案例：品优购购物车全选按钮</h5>
 <p>全选思路:面3个小的复选框按钮( j-checkbox )选中状态( checked )跟着全选按钮( checkall )走。</p>
 <p><mark>:checked选择器:checked 查找被选中的表单元素。</mark></p>
@@ -2030,7 +2030,7 @@ jQuery里面类操作只是对指定类进行操作,不影响原先的类名。<
 html(&quot;内容&quot;)  //设置元素的内容
 </code></pre>
 <h5 id="2-普通元素文本内容-text-相当于原生innertext">2. 普通元素文本内容 text()  (相当于原生innerText)</h5>
-<figure data-type="image" tabindex="175"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200702154143374.png" alt="image-20200702154143374" loading="lazy"></figure>
+<figure data-type="image" tabindex="175"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200702154143374.png" alt="image-20200702154143374" loading="lazy"></figure>
 <h5 id="3-表单的值val-相当于原生value">3. 表单的值val()  (相当于原生value)</h5>
 <h5 id="案例品优购-购物车">案例：品优购-购物车</h5>
 <p><mark>parents(&quot;选择器&quot;)：可以返回指定祖先元素</mark></p>
@@ -2039,16 +2039,16 @@ html(&quot;内容&quot;)  //设置元素的内容
 <p>主要是遍历、创建、添加、删除元素操作。</p>
 <h5 id="1-遍历元素">1. 遍历元素</h5>
 <p>jQuery隐式迭代是对同一元素做了同样的操作。如果想要给同一 元素做不同操作,就需要用到遍历。</p>
-<figure data-type="image" tabindex="176"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200703100336249.png" alt="image-20200703100336249" loading="lazy"></figure>
-<figure data-type="image" tabindex="177"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200703101403261.png" alt="image-20200703101403261" loading="lazy"></figure>
+<figure data-type="image" tabindex="176"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200703100336249.png" alt="image-20200703100336249" loading="lazy"></figure>
+<figure data-type="image" tabindex="177"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200703101403261.png" alt="image-20200703101403261" loading="lazy"></figure>
 <h5 id="2-创建元素">2. 创建元素</h5>
-<figure data-type="image" tabindex="178"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200703102740316.png" alt="image-20200703102740316" loading="lazy"></figure>
+<figure data-type="image" tabindex="178"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200703102740316.png" alt="image-20200703102740316" loading="lazy"></figure>
 <h5 id="3-添加元素">3. 添加元素</h5>
 <h6 id="内部添加">内部添加</h6>
-<figure data-type="image" tabindex="179"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200703102842144.png" alt="image-20200703102842144" loading="lazy"></figure>
+<figure data-type="image" tabindex="179"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200703102842144.png" alt="image-20200703102842144" loading="lazy"></figure>
 <p>prepend  是放在前面</p>
 <h6 id="外部添加">外部添加</h6>
-<figure data-type="image" tabindex="180"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200703103034697.png" alt="image-20200703103034697" loading="lazy"></figure>
+<figure data-type="image" tabindex="180"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200703103034697.png" alt="image-20200703103034697" loading="lazy"></figure>
 <h5 id="4-删除元素">4. 删除元素</h5>
 <pre><code class="language-javascript">element.remove()//删除匹配的元素本身
 
@@ -2060,16 +2060,16 @@ element.html(&quot;&quot;) //清空匹配的元素内容
 <h4 id="事件处理">事件处理</h4>
 <h5 id="事件注册">事件注册</h5>
 <p>单个事件注册：</p>
-<figure data-type="image" tabindex="181"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200705091930160.png" alt="image-20200705091930160" loading="lazy"></figure>
+<figure data-type="image" tabindex="181"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200705091930160.png" alt="image-20200705091930160" loading="lazy"></figure>
 <p>事件处理on</p>
 <p>on()方法在匹配元素上绑定一个或多 个事件的事件处理函数</p>
-<figure data-type="image" tabindex="182"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200705092211318.png" alt="image-20200705092211318" loading="lazy"></figure>
-<figure data-type="image" tabindex="183"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200705092502309.png" alt="image-20200705092502309" loading="lazy"></figure>
-<figure data-type="image" tabindex="184"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200705092857959.png" alt="image-20200705092857959" loading="lazy"></figure>
+<figure data-type="image" tabindex="182"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200705092211318.png" alt="image-20200705092211318" loading="lazy"></figure>
+<figure data-type="image" tabindex="183"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200705092502309.png" alt="image-20200705092502309" loading="lazy"></figure>
+<figure data-type="image" tabindex="184"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200705092857959.png" alt="image-20200705092857959" loading="lazy"></figure>
 <p>在此之前有bind(, live() delegate0等方法来处理事件绑定或者事件委派,最新版本的请用on替代他们。</p>
 <h5 id="事件处理-off-解绑事件">事件处理 off() 解绑事件</h5>
 <p>off()方法可以移除通过on()方法添加的事件处理程序。</p>
-<figure data-type="image" tabindex="185"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cpost-images%5Cimage-20200705094548439.png" alt="image-20200705094548439" loading="lazy"></figure>
+<figure data-type="image" tabindex="185"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200705094548439.png" alt="image-20200705094548439" loading="lazy"></figure>
 <p><mark>如果有的事件只想触发一次，可以使用one()来绑定事件。</mark></p>
 <h5 id="自动触发事件-trigger">自动触发事件 trigger()</h5>
 <p>有些事件希望自动触发比如轮播图自动播放功能跟击右侧按钮一致。可以利用定时器自动触发右侧按钮点击事件,不必鼠标点击触发。</p>
