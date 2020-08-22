@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ww13606467972.github.io/mylove.github.io/</id>
     <title>Mylove</title>
-    <updated>2020-08-19T05:56:27.830Z</updated>
+    <updated>2020-08-22T07:27:07.990Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ww13606467972.github.io/mylove.github.io/"/>
     <link rel="self" href="https://ww13606467972.github.io/mylove.github.io/atom.xml"/>
@@ -1308,7 +1308,110 @@ animation-duration：持续时间；
 <h4 id="1-变量">1. 变量</h4>
 <p>声明变量的特殊情况</p>
 <figure data-type="image" tabindex="95"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1584409109493.png" alt="1584409109493" loading="lazy"></figure>
+<h6 id="数据类型的分类">数据类型的分类</h6>
+<h5 id="基本数据类型undefined-null-boolean-number-string">基本数据类型：undefined、null、Boolean、number、string</h5>
+<h5 id="复杂数据类型object-function">复杂数据类型：object、function</h5>
+<h5 id="基本语法">基本语法：</h5>
+<h5 id="typeof-检测变量数据类型返回数据类型">typeof 检测变量数据类型，返回数据类型</h5>
+<p>扩：undefined类型只有一个值，即特殊的undefined。</p>
+<p><mark>null值表示一个空对象指针，undefined值是派生自null值的，所以undefined == null的返回结果是true</mark></p>
+<p>number</p>
+<p>Number: 表示整数和浮点数      NaN：即非数值(Not a Number)是一个特殊的数值</p>
+<p>说明：</p>
+<ol>
+<li>
+<p>任何涉及NaN的操作(例如NaN/10)都会返回NaN</p>
+</li>
+<li>
+<p>NaN与任何值都不相等，包括NaN本身</p>
+</li>
+</ol>
+<p>isNaN()</p>
+<p>语法：isNaN(n)</p>
+<p>功能：检测n是否是“非数值” 返回值：boolean //true false</p>
+<p>参数：参数n可以是任何类型</p>
+<p>说明：isNaN()在接收到一个值之后，会尝试将这个值转换为数值<br>
+某些不是数值的值会直接转换为数值</p>
+<h5 id="parseint-parsefloat">parseInt() parseFloat()</h5>
+<p>parseInt()：会忽略字符串前面的空格，直到找到第一个非空格字符。</p>
+<p>parseFloat()：从第一个字符开始解析每个字符，直到遇见一个无效的浮点数字符为止</p>
+<p><mark>注：如果字符串中包含有效的十六进制格式，parseInt('0xf')将'0x'转换为相同大小的十进制数值，而parseFloat('0xf')只会输出0</mark></p>
+<h5 id="string和-tostring-转换成字符串">String()和 toString() 转换成字符串</h5>
 <h4 id="2-数组-array">2. 数组 Array</h4>
+<p>数组的初始化:</p>
+<pre><code class="language-javascript">var arr=new Array(count);//count 填数组元素的多少
+var arr=[1,2,3];
+var arr=[]; //创建一个空数组
+</code></pre>
+<h5 id="数组中的方法">数组中的方法</h5>
+<ol>
+<li>push() 数组的末尾添加新的元素</li>
+<li>pop() 删除数组的最后一个元素</li>
+<li>unshift() 数组的开头添加新元素</li>
+<li>shift() 删除数组开头第一个元素</li>
+<li>concat() 合并两个数组</li>
+<li>join() 数组转换成字符串，可以添加分隔符</li>
+<li>reverse( ) 将数组中的元素翻转</li>
+<li>splice() 从数组中选取元素</li>
+<li>sort() 数组排序</li>
+</ol>
+<pre><code class="language-javascript">var arr=[0,5,11,9,7,6,4,21];
+var newarr=arr.sort(function(a,b){return a-b}); //a-b 升序    b-a 降序   
+console.log(newarr.join());
+</code></pre>
+<h4 id="函数">函数</h4>
+<h5 id="函数的初始化">函数的初始化：</h5>
+<pre><code class="language-javascript">function name(形参) {
+	....
+}
+name();
+//调用函数
+</code></pre>
+<pre><code class="language-javascript">// 最大公约数
+function getNum(m,n){
+	var c;
+	while((c=m%n)!=0){
+		m=n; // 把除数作为了被除数 18
+		n=c; // 把余数作为了除数  6
+	}
+	return n; 
+}
+// alert(getNum(9,27))
+
+//最小公倍数16 12   16*12/4
+var c;
+function Num(m,n) {
+	c=(m*n)/getNum(m,n);
+	return c;
+}
+alert(getNum(16,12));
+alert(Num(16,12));
+</code></pre>
+<pre><code class="language-javascript"> //质数：只能被1和他自身整除
+     
+function Zhi(i) {
+var i=prompt('请输入一个数');
+var count=0;
+for(var a=1;a&lt;=i;a++) {
+   if(i%a==0) {//6 
+    count++;
+   }
+}
+   if(count==2) {
+    console.log(i+&quot;是质数&quot;);
+   }
+   else{
+    return;
+    console.log(i+&quot;不是质数&quot;);
+	}
+}       
+        //求6以内的质数的
+function AllZhi(k) {
+   for(var j=1;j&lt;=k;j++) {
+      Zhi(j);
+	}   
+}
+</code></pre>
 <h2 id="六-webapi编程-2020520-2020630">六 . WebAPI编程 2020.5.20-2020.6.30</h2>
 <h3 id="1定义">1.定义</h3>
 <h4 id="1-api">1. API</h4>
