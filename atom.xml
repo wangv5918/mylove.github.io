@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ww13606467972.github.io/mylove.github.io/</id>
     <title>Mylove</title>
-    <updated>2020-08-22T07:27:07.990Z</updated>
+    <updated>2020-09-14T11:43:58.011Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ww13606467972.github.io/mylove.github.io/"/>
     <link rel="self" href="https://ww13606467972.github.io/mylove.github.io/atom.xml"/>
@@ -2021,6 +2021,54 @@ localStorage.getItem(key)    //获取数据
 localStorage.removeItem(key)  //删除数据
 localStorage.clear()  //删除所有的数据
 </code></pre>
+<h4 id="本地存储之cookie">本地存储之cookie</h4>
+<h5 id="cookie定义">cookie定义</h5>
+<p>Cookie是存储在浏览器端的一些字符串信息,是一种会话跟踪技术,把用户在浏览器的一些信息存储在本地,便于下次自动读取.</p>
+<h5 id="cookie-的局限性">cookie 的局限性</h5>
+<p>1.IE6 或更低版本最多 20 个 cookie<br>
+2.IE7 和之后的版本最多可以 50 个 cookie。 IE7 最初也只能 20 个， 之后因被升级不定后增加了。<br>
+3.Firefox 最多 50 个 cookie<br>
+4.Opera 最多 30 个 cookie<br>
+5.Safari 和 Chrome 没有做硬性限制。<br>
+第二：cookie 的最大大约为 4096 字节(<mark>4k</mark>)，为了更好的兼容性，一般不能超过 4095 字节即可。<br>
+第三：cookie 存储在客户端的文本文件，所以特别重要和敏感的数据是不建议保存在cookie 的。比如银行卡号，用户密码等<br>
+第四:cookie可能被禁用<br>
+优点: 兼容性好</p>
+<p><mark>cookie 路径:</mark></p>
+<pre><code class="language-javascript">document.cookie=&quot;username=John Doe;path=/&quot;  // cookie路径
+</code></pre>
+<p><mark>设置cookie</mark></p>
+<pre><code class="language-javascript">function setCookie(cname,cdate){
+	var d=new Date();			
+	console.log(d.getDay());
+	d.setDate(d.getDate()+cdate)
+	var expires=&quot;;expires=&quot;+d
+	document.cookie=&quot;name=&quot;+cname+expires;
+	console.log(document.cookie);
+}
+setCookie('mm',1)
+</code></pre>
+<h5 id="cookie封装getcookie"><mark>cookie封装getcookie</mark></h5>
+<p>增加cookie:  注意key相同会产生覆盖<br>
+删除cookie:  调用增加cookie方法即可,让时间过期来实现删除.<br>
+读取cookie:  注意document.cookie在获取时会返回所有的cookie所对应的字符串<br>
+修改cookie : 更改cookie中某条数据所对应的值,先查找后写入新的cookie</p>
+<p>方案: 1,字符串分割 2,正则表达式</p>
+<pre><code class="language-javascript">//方法一,字符串分割,以username=为突破口
+function getName(cname) {
+	var name=cname+'=';
+	var namearr=document.cookie.split(&quot;;&quot;)
+	console.log(namearr);
+	for(var a=0;a&lt;namearr.length;a++) {
+		var namestr=namearr[a].trim();//trim去除字符串的头尾空格
+		console.log(namestr);
+		if(namestr.indexOf(name)==0) {
+			return namestr.substring(name.length)//substring() 方法用于提取字符串中介于两个指定下标之间的字符。substring() 方法返回的子串包括 开始 处的字符，但不包括 结束 处的字符。
+		}
+	}
+}
+getName('name')
+</code></pre>
 <h2 id="七-jquery-进阶-2020630-202076">七. jQuery   进阶  2020.6.30-2020.7.6</h2>
 <h3 id="jquery概述">jQuery概述</h3>
 <h4 id="1javascript库">1.JavaScript库</h4>
@@ -2508,6 +2556,18 @@ var rg=/^[^a-zA-Z]$/; //[]里的^意为取反。不能包含字母
 <h5 id="replace-替换">replace 替换</h5>
 <figure data-type="image" tabindex="236"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723094748440.png" alt="image-20200723094748440" loading="lazy"></figure>
 <figure data-type="image" tabindex="237"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723095158030.png" alt="image-20200723095158030" loading="lazy"></figure>
+<p><mark>弹幕屏蔽应用</mark></p>
+<pre><code class="language-javascript">var str = 'WW是WW首富'
+var reg11 = /WW/g
+console.log(str.replace(reg11, function(newstr) {//获取到要替换的值(ww)
+    console.log(newstr);
+    var result = '';
+    for (var i = 0; i &lt; newstr.length; i++) {
+        result += '*';
+    }
+    return result;
+}));
+</code></pre>
 <p>正则表达式的参数</p>
 <figure data-type="image" tabindex="238"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723095253562.png" alt="image-20200723095253562" loading="lazy"></figure>
 <h3 id="es6">ES6</h3>
@@ -2530,6 +2590,64 @@ var rg=/^[^a-zA-Z]$/; //[]里的^意为取反。不能包含字母
 <h3 id="模板语法">模板语法</h3>
 <h4 id="前端渲染方式">前端渲染方式</h4>
 <figure data-type="image" tabindex="244"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200724090355837.png" alt="image-20200724090355837" loading="lazy"></figure>
+<h2 id="十ajax-学习">十.AJAX 学习</h2>
+<h3 id="ajax-基础">AJAX 基础</h3>
+<p>Ajax  是一种异步的从服务器获取数据的方法，在不刷新整个页面的情况下可以做到局部更新数据</p>
+<p>实例： 百度搜索，重名检测，更换验证码，分页加载，京东页面加载。。。</p>
+<p>优点： 传统的页面获取新数据需要刷新整个页面，等待时间比较长；但这种技术能够向服务器请求额外的数据而无须卸载页面(即刷新) ，会带来更好的用户体验。</p>
+<h3 id="get和post区别">get和post区别</h3>
+<p>get:  请求参数拼接到url后，例如 www.baidu.com?wd=iphone&amp;userid=001&amp;sex=1   ,从浏览器上输入一个网址就是使用的get方式请求数据，get一般用于获取数据，且传给服务器的数据量(参数)很小,最多只有几 KB。</p>
+<p>post： 请求参数不在url中，而是拼接在 <body>标签中(请求体)，post相对于get方法主要是可以向服务器提交更多的数据，上传文件一般使用post方式。</p>
+<h3 id="json">JSON</h3>
+<h4 id="json-规则">JSON 规则</h4>
+<p>使用Ajax和后台进行交互，常见的格式是: JSON     , XML(使用较少)<br>
+JSON 指的是    JavaScript 对象表示法（JavaScript Object Notation）<br>
+JSON 格式，是一种特殊string类型，由若干个键值对构成，和对象结构很像例如：</p>
+<p>1.多个键值对构成的JSON字符串<br>
+&quot; {'name':'mrwang','address':qingdao,'job':'coder'} &quot;    //所有的key都是字符串<br>
+2.数组形式的<br>
+'[{&quot;name&quot; : &quot;a&quot;,&quot;age&quot; : 1},{&quot;name&quot; : &quot;b&quot;,&quot;age&quot; : 2}]';<br>
+3.嵌套结构<br>
+&quot; {'person':{},'name':&quot;mrwang&quot;} &quot;<br>
+注意：  json格式的key必需是字符串，且value不可以为undefined<br>
+JSON文件构建： 使用webStorm构建   xx.json, webStorm会提供语法检查<br>
+JSON在线转换网站：  json.cn       ，标准的JSON的key都是使用双引号包裹</p>
+<h4 id="json-与对象转换">JSON 与对象转换</h4>
+<p>ES5原生支持JSON转换：<br>
+<mark>把字符串转换为对象 :      JSON.parse(obj)               返回对象</mark><br>
+把对象转换为字符串:        JSON.stringify(jsonstr)           返回字符串<br>
+特点： 使用简单，但IE8及以下不支持；在做移动端的时候，可以放心使用</p>
+<h4 id="eval">eval</h4>
+<p>eval是一个可以 执行 js字符串代码的方法,并返回相应的结果。</p>
+<pre><code class="language-javascript">var  str = &quot;alert('A');alert('B');alert('C');&quot;;
+eval(str); //或者  window.eval()
+
+var  sum = eval(&quot;2 + 3&quot;);
+ alert(sum);
+</code></pre>
+<p>使用eval把json字符串转换为对象 eval(   ({name:ssss})  )</p>
+<pre><code class="language-javascript">var  obj = eval(   &quot;(&quot;  +  jsonstr  + &quot;)&quot;   );
+</code></pre>
+<p><mark>注意： 切勿大量使用 eval方法，eval不安全而且不利于浏览器优化代码</mark></p>
+<h3 id="封装ajax"><mark>封装ajax</mark></h3>
+<pre><code class="language-javascript">function ajax(method,url,isbol,successfulFn){
+	var rex=new XMLHttpRequest()
+	rex.onreadystatechange=function(){
+		if(rex.readyState==4&amp;&amp;rex.status==200){
+			successfulFn(rex.responseText)
+		}
+	}
+	rex.open(method,url,isbol)
+	rex.send()
+}
+ajax('get','text.json',true,function(res){
+	document.write(res)
+	var objs=JSON.parse(res)
+	console.log(objs)
+})
+			
+</code></pre>
+<p><mark>对ajax 生成的元素js操作需放在ajax函数里</mark>,案例--京东电脑</p>
 <hr>
 <h1 id="移动端开发">移动端开发</h1>
 <h2 id="一-flex-伸缩布局-202048-410">一. Flex 伸缩布局  2020.4.8-4.10</h2>
