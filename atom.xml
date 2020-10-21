@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ww13606467972.github.io/mylove.github.io/</id>
     <title>Mylove</title>
-    <updated>2020-09-21T04:39:26.616Z</updated>
+    <updated>2020-10-21T07:33:22.337Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ww13606467972.github.io/mylove.github.io/"/>
     <link rel="self" href="https://ww13606467972.github.io/mylove.github.io/atom.xml"/>
@@ -30,7 +30,7 @@
         <link href="https://ww13606467972.github.io/mylove.github.io/post/web-jin-jie-zhi-lu/">
         </link>
         <updated>2020-05-09T14:17:21.000Z</updated>
-        <content type="html"><![CDATA[<p>typora-copy-images-to: web进阶之路</p>
+        <content type="html"><![CDATA[<p>typora-copy-images-to: file://C:/Users/lenovo/Documents/Gridea/post-images</p>
 <p><code>file://C:/Users/lenovo/Documents/Gridea/post-images/</code></p>
 <h1 id="前端开发工程师养成手册">前端开发工程师养成手册</h1>
 <h2 id="一html基础2020128-2020213">一.HTML基础2020.1.28-2020.2.13</h2>
@@ -1041,7 +1041,7 @@ visibility：hidden; 　  //对象隐藏
 </tbody>
 </table>
 <h4 id="22-轮廓线-outline">2.2 轮廓线 outline</h4>
-<img src="G:/BaiduNetdiskDownload/01-03%20%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/02-CSS%E8%B5%84%E6%96%99/02-CSS%E8%B5%84%E6%96%99/CSS-Day07/%E7%AC%94%E8%AE%B0/media/outline.png">
+<img src="file://C:/Users/lenovo/Documents/Gridea/post-images/outline.png">
 <p>是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。</p>
 <pre><code class="language-css"> outline : outline-color ||outline-style || outline-width 
 </code></pre>
@@ -1304,6 +1304,100 @@ animation-duration：持续时间；
 ●<code>transform-style: flat</code>子元素不开启<code>3d</code>立体空间默认的<br>
 ●<code>transform-style: preserve- 3d;</code>元素开启立体空间<br>
 ●代码写给父级,但是影响的是子盒子</p>
+<h3 id="7-h5-drag">7. H5--drag</h3>
+<p>拖拽元素支持的事件<br>
+ondrag 应用于拖拽元素，整个拖拽过程都会调用<br>
+ondragstart 应用于拖拽元素，当拖拽开始时调用<br>
+ondragleave 应用于拖拽元素，当鼠标离开拖拽元素是调用<br>
+ondragend 应用于拖拽元素，当拖拽结束时调用<br>
+目标元素支持的事件<br>
+ondragenter 应用于目标元素，当拖拽元素进入时调用<br>
+ondragover 应用于目标元素，当停留在目标元素上时调用<br>
+ondrop 应用于目标元素，当在目标元素上松开鼠标时调用<br>
+ondragleave 应用于目标元素，当鼠标离开目标元素时调用</p>
+<p>步骤:</p>
+<ol>
+<li>先给drag元素设置可拖拽属性<code>draggable=&quot;true&quot;</code>,设置ondragStart(拖拽开始事件),通过<code>dataTransfer.setData(key,value)</code>保存被drag元素的id等内容</li>
+<li>给放置区域设置<code>ondragover</code> 事件(拖拽元素被拖到区域内触发),取消默认行为<code>e.preventDefault()</code></li>
+<li>放置区域设置<code>ondrop</code>事件(松开拖拽元素时触发),通过<code>dataTransfer.getData(key)</code>,获取到被拖拽的元素</li>
+</ol>
+<p>栗子:拼图</p>
+<h3 id="8-canvas">8. canvas</h3>
+<h4 id="矩形">矩形</h4>
+<pre><code class="language-javascript">fillRect( x , y , width , height)  //填充以(x,y)为起点宽高分别为width、height的矩形 默认为黑色
+
+stokeRect( x , y , width , height) //绘制一个空心以(x,y)为起点宽高分别为width、height的矩形
+
+clearRect( x, y , width , height ) // 清除以(x,y)为起点宽高分别为width、height的矩形 为透明 
+
+</code></pre>
+<h4 id="路径">路径</h4>
+<pre><code class="language-javascript">beginPath() //新建一条路径一旦创建成功 绘制命令将转移到新建的路径上
+
+moveTo( x, y ) //移动画笔到(x , y) 点开始后面的绘制工作
+
+closePath() //关闭该路径 将绘制指令重新转移到上下文
+
+stroke() //将绘制的路径进行描边
+
+fill() //将绘制的封闭区域进行填充
+
+</code></pre>
+<h4 id="圆弧">圆弧</h4>
+<pre><code class="language-javascript">arc( x , y , r , startAngle , endAngle ,  anticlosewise ) // 以(x,y)为圆心 r为半径的圆  绘制startAngle弧度 到endAngle弧度的圆弧 anticlosewise默认为false 即顺时针方向 true为逆时针方向
+
+arcTo( x1 , y1 , x2 , y2 , radius ) //根据 两个控制点 (x1,y1) 和 (x2, y2)以及半径绘制弧线 同时连接两个控制点
+
+</code></pre>
+<h4 id="样式添加">样式添加</h4>
+<pre><code class="language-javascript">fillStyle = color
+
+strokeStyle = color 
+
+//color 可以为颜色值、渐变对象(并非样式！！！！)
+
+
+lineWidth  = value  //线宽
+
+lineCap = type （butt 、 round 、square）//线条末端样式   依次是方形、圆形&amp;突出、方形&amp;突出
+
+</code></pre>
+<h4 id="渐变">渐变</h4>
+<pre><code class="language-javascript">var gradient = ctx.createLinearGradient( x1 ,y1 ,x2 ,y2); //线性渐变
+
+var gradient = ctx.createRadialGradient(x1 ,y1 ,r1 ,x2 ,y2 ,r2);//径向渐变
+
+gradient.addColorStop( position , color )// position:相对位置0~1    color:该位置下的颜色
+
+</code></pre>
+<h4 id="文本">文本</h4>
+<pre><code class="language-javascript">fillText( text , x , y , [,maxWidth]) //在(x,y)位置绘制text文本  最大宽度为maxWidth(可选)
+
+strokeText( text ,x ,y ,[,maxWidth]) //在(x,y)位置绘制text文本边框  最大宽度为maxWidth(可选)
+
+font = value               eg:&quot;100px sans-serif&quot;  
+
+</code></pre>
+<h4 id="绘制图片">绘制图片</h4>
+<pre><code class="language-javascript">drawImage( image , x , y , width , height ) //image为图片对象、从(x,y)处放置宽高分别为width height的图片
+
+drawImage( image|canvas , sx , sy , swidth , sheight ,dx ,dy ,dwidth ,dheight) //切片前四个是定义图像源|画布的切片位置和大小   后四个是定期切片的目标显示位置大小
+
+</code></pre>
+<h4 id="状态保存恢复">状态保存|恢复</h4>
+<pre><code class="language-javascript">save()
+
+restore()
+
+</code></pre>
+<h4 id="动作">动作</h4>
+<pre><code class="language-javascript">translate( x , y ) //将canvas原点的移动到 (x,y)     （save&amp;restore保存初始状态！！！）
+
+rotate( angle )// 顺时针方向旋转坐标轴 angle弧度
+
+scale(x,y) //将图形横向缩放x倍、纵向缩放y倍   （ x、y大于1是放大  小于1为缩放！！！）
+
+</code></pre>
 <h2 id="五-js基础-2020316-2020331">五. <code>JS</code>基础   2020.3.16-2020.3.31</h2>
 <h4 id="1-变量">1. 变量</h4>
 <p>声明变量的特殊情况</p>
@@ -1797,7 +1891,7 @@ Windows.addEventListener('load',function(){
 </code></pre>
 <p>window.onload是窗口(页面)加载事件,当文档内容完全加载完成会触发该事件(包括图像、脚本文件、CSS<br>
 文件等),就调用的处理函数。</p>
-<figure data-type="image" tabindex="122"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cweb%E8%BF%9B%E9%98%B6%E4%B9%8B%E8%B7%AF%5C1591169676903.png" alt="1591169676903" loading="lazy"></figure>
+<figure data-type="image" tabindex="122"><img src="C:%5CUsers%5Clenovo%5CDocuments%5CGridea%5Cfile://C:/Users/lenovo/Documents/Gridea/post-images%5C1591169676903.png" alt="1591169676903" loading="lazy"></figure>
 <pre><code class="language-javascript">document.addEventListener('DOMContentLoaded',function(){})
 </code></pre>
 <p>DOMContentLoaded事件触发时，仅当DOM加载完成,不包括样式表,图片, flash等。<br>
@@ -2502,7 +2596,7 @@ JavaScript变体的一种方式,即在严格的条件下运行JS代码。</p>
 <h5 id="闭包案例">闭包案例</h5>
 <h6 id="循环注册点击事件">循环注册点击事件</h6>
 <p>利用闭包方式得到小li 的索引号</p>
-<img src="file://C:/Users/lenovo/Documents/Gridea/post-images/bibao.png" alt="bibao" style="zoom: 80%;" />
+<img src="file://C:/Users/lenovo/Documents/Gridea/post-images/bibao.png"/>
 <h4 id="递归">递归</h4>
 <h5 id="递归定义函数内部可以调用自己本身">递归定义：函数内部可以调用自己本身</h5>
 <figure data-type="image" tabindex="225"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200720102641522.png" alt="image-20200720102641522" loading="lazy"></figure>
@@ -2556,18 +2650,6 @@ var rg=/^[^a-zA-Z]$/; //[]里的^意为取反。不能包含字母
 <h5 id="replace-替换">replace 替换</h5>
 <figure data-type="image" tabindex="236"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723094748440.png" alt="image-20200723094748440" loading="lazy"></figure>
 <figure data-type="image" tabindex="237"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723095158030.png" alt="image-20200723095158030" loading="lazy"></figure>
-<p><mark>弹幕屏蔽应用</mark></p>
-<pre><code class="language-javascript">var str = 'WW是WW首富'
-var reg11 = /WW/g
-console.log(str.replace(reg11, function(newstr) {//获取到要替换的值(ww)
-    console.log(newstr);
-    var result = '';
-    for (var i = 0; i &lt; newstr.length; i++) {
-        result += '*';
-    }
-    return result;
-}));
-</code></pre>
 <p>正则表达式的参数</p>
 <figure data-type="image" tabindex="238"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200723095253562.png" alt="image-20200723095253562" loading="lazy"></figure>
 <h3 id="es6">ES6</h3>
@@ -2590,7 +2672,296 @@ console.log(str.replace(reg11, function(newstr) {//获取到要替换的值(ww)
 <h3 id="模板语法">模板语法</h3>
 <h4 id="前端渲染方式">前端渲染方式</h4>
 <figure data-type="image" tabindex="244"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200724090355837.png" alt="image-20200724090355837" loading="lazy"></figure>
-<h2 id="十ajax-学习">十.AJAX 学习</h2>
+<h3 id="vue模板语法">vue模板语法</h3>
+<h4 id="1指令">1.指令</h4>
+<h5 id="1v-cloak-指令用法">1.v-cloak 指令用法</h5>
+<p>插值表达式存在的问题:“闪动”<br>
+如何解决该问题:使用v-cloak指令<br>
+解决该问题的原理∶先隐藏，替换好值之后再显示最终的值</p>
+<h5 id="3-数据绑定指令">3. 数据绑定指令</h5>
+<ol>
+<li>v-text填充纯文本相比插值表达式更加简洁</li>
+<li>v-html填充HTML片段存在安全问题本网站内部数据可以使用，来自第三方的数据不可以用</li>
+<li>v-pre填充原始信息显示原始信息，跳过编译过程(分析编译过程）</li>
+</ol>
+<h4 id="2数据响应式">2.数据响应式</h4>
+<figure data-type="image" tabindex="245"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925145317711.png" alt="image-20200925145317711" loading="lazy"></figure>
+<p>v-once:后续不再更改,可以提高性能</p>
+<h4 id="3-数据绑定v-model-双向数据绑定">3. 数据绑定v-model 双向数据绑定</h4>
+<p>MVVM设计思想:<img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925145915948.png" alt="image-20200925145915948" loading="lazy"></p>
+<ol>
+<li>M(Model)</li>
+<li>V(View)</li>
+<li>VM((View+Model)</li>
+</ol>
+<h4 id="4-事件绑定-v-on">4. 事件绑定 v-on</h4>
+<figure data-type="image" tabindex="246"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925140559106.png" alt="image-20200925140559106" loading="lazy"></figure>
+<figure data-type="image" tabindex="247"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925141222327.png" alt="image-20200925141222327" loading="lazy"></figure>
+<h5 id="3事件修饰符">3.事件修饰符</h5>
+<figure data-type="image" tabindex="248"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925141733394.png" alt="image-20200925141733394" loading="lazy"></figure>
+<h5 id="4-按键修饰符">4. 按键修饰符</h5>
+<figure data-type="image" tabindex="249"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925143134559.png" alt="image-20200925143134559" loading="lazy"></figure>
+<h5 id="5-自定义按键修饰符">5. 自定义按键修饰符</h5>
+<figure data-type="image" tabindex="250"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925143817824.png" alt="image-20200925143817824" loading="lazy"></figure>
+<h4 id="5-属性绑定-v-bind">5. 属性绑定 v-bind</h4>
+<figure data-type="image" tabindex="251"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925150419168.png" alt="image-20200925150419168" loading="lazy"></figure>
+<p>v-model实现原理分析:</p>
+<figure data-type="image" tabindex="252"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925150825114.png" alt="image-20200925150825114" loading="lazy"></figure>
+<h4 id="6样式绑定">6.样式绑定</h4>
+<h5 id="1-class样式处理">1. class样式处理</h5>
+<figure data-type="image" tabindex="253"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925152733080.png" alt="image-20200925152733080" loading="lazy"></figure>
+<h5 id="2-style样式处理">2. style样式处理</h5>
+<figure data-type="image" tabindex="254"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925154221257.png" alt="image-20200925154221257" loading="lazy"></figure>
+<h4 id="7-分支循环结构">7. 分支循环结构</h4>
+<h5 id="1-v-ifv-show">1. v-if/v-show</h5>
+<p>v-if控制元素是否渲染到页面<br>
+v-show控制元素是否显示(已经渲染到了页面）,<mark>频繁隐藏/显示用v-show</mark></p>
+<h5 id="2-v-for">2. v-for</h5>
+<figure data-type="image" tabindex="255"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925164443292.png" alt="image-20200925164443292" loading="lazy"></figure>
+<h5 id="-2"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200925165927755.png" alt="image-20200925165927755" loading="lazy"></h5>
+<h3 id="vue-常用特性">vue 常用特性</h3>
+<h4 id="1-表单操作">1. 表单操作</h4>
+<h5 id="基于vue的表单操作">基于vue的表单操作</h5>
+<ul>
+<li>
+<p>单行文本</p>
+</li>
+<li>
+<p>textarea 多行文本</p>
+</li>
+<li>
+<p>select 下拉多选</p>
+</li>
+<li>
+<p>radio 单选框</p>
+</li>
+<li>
+<p>checkbox 多选框</p>
+<h5 id="表单域修饰符">表单域修饰符</h5>
+</li>
+</ul>
+<figure data-type="image" tabindex="256"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926113019964.png" alt="image-20200926113019964" loading="lazy"></figure>
+<h4 id="2-自定义指令">2. 自定义指令</h4>
+<p>内置指令欲求不满</p>
+<h5 id="1自定义指令的语法规则获取元素焦点">1.自定义指令的语法规则(获取元素焦点)</h5>
+<figure data-type="image" tabindex="257"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926153928256.png" alt="image-20200926153928256" loading="lazy"></figure>
+<h5 id="2自定义指令用法">2.自定义指令用法</h5>
+<figure data-type="image" tabindex="258"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926154046284.png" alt="image-20200926154046284" loading="lazy"></figure>
+<h5 id="3带参数的自定义指令改变元素背景色">3.带参数的自定义指令(改变元素背景色)</h5>
+<figure data-type="image" tabindex="259"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926154650436.png" alt="image-20200926154650436" loading="lazy"></figure>
+<p>指令的用法:</p>
+<figure data-type="image" tabindex="260"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926154756829.png" alt="image-20200926154756829" loading="lazy"></figure>
+<h5 id="局部指令">局部指令</h5>
+<figure data-type="image" tabindex="261"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926155401006.png" alt="image-20200926155401006" loading="lazy"></figure>
+<h4 id="3-计算属性">3. 计算属性</h4>
+<h5 id="为何需要计算属性">为何需要计算属性</h5>
+<p>表达式的计算逻辑可能会比较复杂，使用计算属性可以使模板内容更加简洁</p>
+<h5 id="计算属性的用法">计算属性的用法</h5>
+<figure data-type="image" tabindex="262"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926160037312.png" alt="image-20200926160037312" loading="lazy"></figure>
+<p>使用计算属性</p>
+<pre><code>&lt;div&gt;{{reversedMessage}}&lt;/div&gt;
+</code></pre>
+<h5 id="计算属性与方法的区别">计算属性与方法的区别</h5>
+<ul>
+<li>计算属性是基于它们的依赖进行缓存的</li>
+<li>方法不存在缓存</li>
+</ul>
+<h4 id="4-侦听器">4. 侦听器</h4>
+<h5 id="1侦听器的应用场景">1.侦听器的应用场景</h5>
+<p>数据变化时执行异步或开销较大的操作</p>
+<figure data-type="image" tabindex="263"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926161709468.png" alt="image-20200926161709468" loading="lazy"></figure>
+<h5 id="2-侦听器的用法">2. 侦听器的用法</h5>
+<figure data-type="image" tabindex="264"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926161834684.png" alt="image-20200926161834684" loading="lazy"></figure>
+<h4 id="5-过滤器">5. 过滤器</h4>
+<h5 id="1过滤器作用">1.过滤器作用</h5>
+<p>格式化数据,例如将字符串格式化为首字母大写,将日期格式转化为指定的格式</p>
+<h5 id="2自定义过滤器需返回">2.自定义过滤器,需返回</h5>
+<figure data-type="image" tabindex="265"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926163445949.png" alt="image-20200926163445949" loading="lazy"></figure>
+<h5 id="3-使用过滤器">3. 使用过滤器</h5>
+<figure data-type="image" tabindex="266"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926163512633.png" alt="image-20200926163512633" loading="lazy"></figure>
+<h5 id="4-局部过滤器">4. 局部过滤器</h5>
+<figure data-type="image" tabindex="267"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926164104009.png" alt="image-20200926164104009" loading="lazy"></figure>
+<h5 id="5-带参数的过滤器">5. 带参数的过滤器</h5>
+<figure data-type="image" tabindex="268"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926164241368.png" alt="image-20200926164241368" loading="lazy"></figure>
+<figure data-type="image" tabindex="269"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200926164252403.png" alt="image-20200926164252403" loading="lazy"></figure>
+<h4 id="6-vue-的生命周期">6. VUE 的生命周期</h4>
+<h5 id="主要阶段">主要阶段</h5>
+<figure data-type="image" tabindex="270"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927082915525.png" alt="image-20200927082915525" loading="lazy"></figure>
+<h5 id="产生过程">产生过程</h5>
+<figure data-type="image" tabindex="271"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927083623613.png" alt="image-20200927083623613" loading="lazy"></figure>
+<p>mounted重点获取后端接口</p>
+<h3 id="案例图书管理">案例:图书管理</h3>
+<h5 id="拓展vue-数组变异方法">拓展:vue 数组变异方法</h5>
+<figure data-type="image" tabindex="272"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927084208817.png" alt="image-20200927084208817" loading="lazy"></figure>
+<h5 id="修改响应式数据数组对象响应式变化">修改响应式数据(数组|对象响应式变化)</h5>
+<figure data-type="image" tabindex="273"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927085459184.png" alt="image-20200927085459184" loading="lazy"></figure>
+<h2 id="十vue全家桶组件化开发2020927-20201021">十.vue全家桶组件化开发2020.9.27-2020.10.21</h2>
+<h3 id="组件化开发思想">组件化开发思想</h3>
+<h4 id="现实中的组件化思想体现">现实中的组件化思想体现</h4>
+<figure data-type="image" tabindex="274"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927142150022.png" alt="image-20200927142150022" loading="lazy"></figure>
+<ul>
+<li>标准</li>
+<li>分治</li>
+<li>重用</li>
+<li>组合</li>
+</ul>
+<h4 id="编程中的组件化思想体现">编程中的组件化思想体现</h4>
+<figure data-type="image" tabindex="275"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927142454979.png" alt="image-20200927142454979" loading="lazy"></figure>
+<h4 id="组件化规范-web-components">组件化规范 :web components</h4>
+<ul>
+<li>我们希望尽可能多的重用代码</li>
+<li>自定义组件的方式不太容易(html、css和js)</li>
+<li>多次使用组件可能导致冲突</li>
+</ul>
+<p><strong>Web Components</strong>通过创建封装好功能的定制元素解决上述问题</p>
+<h3 id="全局组件">全局组件</h3>
+<h4 id="1组局组件注册语法">1.组局组件注册语法</h4>
+<figure data-type="image" tabindex="276"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927143150576.png" alt="image-20200927143150576" loading="lazy"></figure>
+<p>栗子:</p>
+<figure data-type="image" tabindex="277"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927143228377.png" alt="image-20200927143228377" loading="lazy"></figure>
+<h4 id="2组件用法">2.组件用法</h4>
+<figure data-type="image" tabindex="278"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927145200147.png" alt="image-20200927145200147" loading="lazy"></figure>
+<p>组件数据相互独立</p>
+<h4 id="3-组件注册注意事项">3. 组件注册注意事项</h4>
+<h5 id="data必须是个函数">data必须是个函数</h5>
+<h5 id="组件模板内容template部分必须是单个根元素">组件模板内容(template部分)必须是单个根元素</h5>
+<h5 id="组件模板内容template部分可以是模板字符串">组件模板内容(template部分)可以是模板字符串</h5>
+<h5 id="4组件命名方式推荐短横线">4.组件命名方式(<mark>推荐短横线</mark>)</h5>
+<figure data-type="image" tabindex="279"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927151704416.png" alt="image-20200927151704416" loading="lazy"></figure>
+<ul>
+<li>若使用驼峰方式,只能在字符串模板中使用,在普通的标签模板中,必须使用短横线的方式使用组件</li>
+</ul>
+<h3 id="局部组件">局部组件</h3>
+<h4 id="1局部组件注册">1.局部组件注册</h4>
+<figure data-type="image" tabindex="280"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927152935858.png" alt="image-20200927152935858" loading="lazy"></figure>
+<p><mark>局部组件只能在注册的父组件中使用</mark></p>
+<h3 id="组件间数据交互">组件间数据交互</h3>
+<h4 id="1父组件向子组件传递">1.父组件向子组件传递</h4>
+<h5 id="组件内部通过props接收传递过来的值">组件内部通过props接收传递过来的值</h5>
+<figure data-type="image" tabindex="281"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927161829104.png" alt="image-20200927161829104" loading="lazy"></figure>
+<h5 id="父组件通过属性将值传递给子组件">父组件通过属性将值传递给子组件</h5>
+<figure data-type="image" tabindex="282"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927161913423.png" alt="image-20200927161913423" loading="lazy"></figure>
+<h5 id="props属性名规则">props属性名规则</h5>
+<figure data-type="image" tabindex="283"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200927165626816.png" alt="image-20200927165626816" loading="lazy"></figure>
+<h5 id="props属性值类型">props属性值类型</h5>
+<h4 id="2-子组件向父组件传递">2. 子组件向父组件传递</h4>
+<h5 id="子组件通过自定义方式向父组件传递信息">子组件通过自定义方式向父组件传递信息</h5>
+<figure data-type="image" tabindex="284"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929135318748.png" alt="image-20200929135318748" loading="lazy"></figure>
+<h5 id="父组件监听子组件的事件">父组件监听子组件的事件</h5>
+<figure data-type="image" tabindex="285"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929135331944.png" alt="image-20200929135331944" loading="lazy"></figure>
+<h5 id="带参数的传递">带参数的传递</h5>
+<figure data-type="image" tabindex="286"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929140300263.png" alt="image-20200929140300263" loading="lazy"></figure>
+<figure data-type="image" tabindex="287"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929140308228.png" alt="image-20200929140308228" loading="lazy"></figure>
+<h4 id="非父子组件间传递">非父子组件间传递</h4>
+<h5 id="单独的事件中心管理组件间的通信">单独的事件中心管理组件间的通信</h5>
+<figure data-type="image" tabindex="288"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929140732525.png" alt="image-20200929140732525" loading="lazy"></figure>
+<pre><code class="language-javascript">var eventHub=new Vue()
+</code></pre>
+<h5 id="监听事件与销毁事件">监听事件与销毁事件</h5>
+<pre><code class="language-javascript">eventHub.$on('add-todo',addTodo)
+eventHub.$off('add-todo')
+</code></pre>
+<h5 id="触发事件">触发事件</h5>
+<pre><code class="language-javascript">eventHub.$emit('add-todo',id)
+</code></pre>
+<h4 id="组件插槽">组件插槽</h4>
+<h5 id="组件插槽的作用父组件向子组件传递内容">组件插槽的作用:父组件向子组件传递内容</h5>
+<figure data-type="image" tabindex="289"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929161722046.png" alt="image-20200929161722046" loading="lazy"></figure>
+<h5 id="组件插槽的使用">组件插槽的使用</h5>
+<h6 id="插槽slot位置">插槽(slot)位置</h6>
+<figure data-type="image" tabindex="290"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929161828566.png" alt="image-20200929161828566" loading="lazy"></figure>
+<h6 id="插槽内容">插槽内容</h6>
+<figure data-type="image" tabindex="291"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929161844473.png" alt="image-20200929161844473" loading="lazy"></figure>
+<h5 id="具名插槽用法">具名插槽用法</h5>
+<h6 id="具名插槽定义">具名插槽定义:</h6>
+<figure data-type="image" tabindex="292"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929163052547.png" alt="image-20200929163052547" loading="lazy"></figure>
+<h6 id="插槽内容-2">插槽内容</h6>
+<figure data-type="image" tabindex="293"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929163145016.png" alt="image-20200929163145016" loading="lazy"></figure>
+<h5 id="作用域插槽">作用域插槽</h5>
+<p>应用场景:父组件对子组件的内容进行加工处理</p>
+<figure data-type="image" tabindex="294"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20200929165016684.png" alt="image-20200929165016684" loading="lazy"></figure>
+<h2 id="十一路由-20201015-20201021">十一.路由  2020.10.15-2020.10.21</h2>
+<h3 id="路由的基本概念与原理">路由的基本概念与原理</h3>
+<h4 id="路由分类">路由分类</h4>
+<ul>
+<li>前端路由</li>
+<li>后端路由</li>
+</ul>
+<h5 id="后端路由">后端路由</h5>
+<p>概念:根据不同的用户URL请求，返回不同的内容<br>
+本质:URL请求地址与服务器资源之间的对应关系</p>
+<h5 id="spa">SPA</h5>
+<figure data-type="image" tabindex="295"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014153411938.png" alt="image-20201014153411938" loading="lazy"></figure>
+<h5 id="前端路由">前端路由</h5>
+<p>概念:根据不同的用户事件，显示不同的页面内容<br>
+本质:用户事件与事件处理函数之间的对应关系</p>
+<h3 id="vue-router-路由管理器">Vue Router ---路由管理器</h3>
+<figure data-type="image" tabindex="296"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014154416855.png" alt="image-20201014154416855" loading="lazy"></figure>
+<h4 id="vue-router-基本使用">vue-router 基本使用</h4>
+<h5 id="引入vue-routerjs-文件">引入vue-router.js 文件</h5>
+<h5 id="添加路由链接">添加路由链接</h5>
+<figure data-type="image" tabindex="297"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014164017457.png" alt="image-20201014164017457" loading="lazy"></figure>
+<h5 id="添加路由填充位">添加路由填充位</h5>
+<figure data-type="image" tabindex="298"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014164231897.png" alt="image-20201014164231897" loading="lazy"></figure>
+<h5 id="定义路由组件">定义路由组件</h5>
+<figure data-type="image" tabindex="299"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014164529695.png" alt="image-20201014164529695" loading="lazy"></figure>
+<h5 id="配置路由规则并创建路由实例">配置路由规则并创建路由实例</h5>
+<figure data-type="image" tabindex="300"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014165134003.png" alt="image-20201014165134003" loading="lazy"></figure>
+<h5 id="把路由挂载到vue根实例中">把路由挂载到vue根实例中</h5>
+<figure data-type="image" tabindex="301"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201014165744650.png" alt="image-20201014165744650" loading="lazy"></figure>
+<h4 id="路由重定向">路由重定向</h4>
+<figure data-type="image" tabindex="302"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015092808184.png" alt="image-20201015092808184" loading="lazy"></figure>
+<h4 id="路由嵌套">路由嵌套</h4>
+<h5 id="父路由组件模板">父路由组件模板</h5>
+<ul>
+<li>父级路由链接</li>
+<li>父组件路由填充位</li>
+</ul>
+<figure data-type="image" tabindex="303"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015102318377.png" alt="image-20201015102318377" loading="lazy"></figure>
+<h5 id="子路由组件模板">子路由组件模板</h5>
+<ul>
+<li>子级路由链接</li>
+<li>子级路由填充位</li>
+</ul>
+<figure data-type="image" tabindex="304"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015102455691.png" alt="image-20201015102455691" loading="lazy"></figure>
+<h5 id="嵌套路由配置">嵌套路由配置</h5>
+<p>父级路由通过children属性配置子级路由</p>
+<figure data-type="image" tabindex="305"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015102928221.png" alt="image-20201015102928221" loading="lazy"></figure>
+<h4 id="动态路由匹配">动态路由匹配</h4>
+<h5 id="动态路由匹配的基本用法">动态路由匹配的基本用法</h5>
+<p>应用场景:通过动态路由参数的模式进行路由匹配</p>
+<figure data-type="image" tabindex="306"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015113233206.png" alt="image-20201015113233206" loading="lazy"></figure>
+<figure data-type="image" tabindex="307"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015113330807.png" alt="image-20201015113330807" loading="lazy"></figure>
+<h5 id="路由组件传递参数">路由组件传递参数</h5>
+<p>$route与对应路由形成高度耦合,所以使用props将组件和路由解耦</p>
+<h6 id="1-props的值为布尔类型">1. props的值为布尔类型</h6>
+<figure data-type="image" tabindex="308"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015135448259.png" alt="image-20201015135448259" loading="lazy"></figure>
+<h6 id="2-props的值为对象类型">2. props的值为对象类型</h6>
+<figure data-type="image" tabindex="309"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015143427575.png" alt="image-20201015143427575" loading="lazy"></figure>
+<h6 id="3-props的值为函数类型">3. props的值为函数类型</h6>
+<figure data-type="image" tabindex="310"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201015155233429.png" alt="image-20201015155233429" loading="lazy"></figure>
+<h4 id="命名路由">命名路由</h4>
+<h5 id="命名路由的配置规则">命名路由的配置规则</h5>
+<p>为了更加方便的表示路由的路径，可以给路由规则起一个别名，即为“命名路由”。</p>
+<figure data-type="image" tabindex="311"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201016094427276.png" alt="image-20201016094427276" loading="lazy"></figure>
+<figure data-type="image" tabindex="312"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201016094457266.png" alt="image-20201016094457266" loading="lazy"></figure>
+<h4 id="编程式导航">编程式导航</h4>
+<p>页面导航的两种方式</p>
+<ol>
+<li>声明式导航:通过点击链接实现导航的方式,叫做声明式导航,栗子a标签或者vue中的router-link</li>
+<li>通过调用JavaScript形式的API实现导航的方式,叫做编程式导航,栗子location.href</li>
+</ol>
+<h5 id="编程式导航的基本用法">编程式导航的基本用法</h5>
+<p>常用的编程式导航API如下:</p>
+<ul>
+<li>this.$router.push('hash地址')</li>
+<li>this.$router.go(n)</li>
+</ul>
+<figure data-type="image" tabindex="313"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201016101200099.png" alt="image-20201016101200099" loading="lazy"></figure>
+<h5 id="编程式导航参数规则">编程式导航参数规则</h5>
+<p>router.push() 方法的参数规则</p>
+<figure data-type="image" tabindex="314"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/image-20201016102808774.png" alt="image-20201016102808774" loading="lazy"></figure>
+<h2 id="十二ajax-学习">十二.AJAX 学习</h2>
 <h3 id="ajax-基础">AJAX 基础</h3>
 <p>Ajax  是一种异步的从服务器获取数据的方法，在不刷新整个页面的情况下可以做到局部更新数据</p>
 <p>实例： 百度搜索，重名检测，更换验证码，分页加载，京东页面加载。。。</p>
@@ -2657,13 +3028,13 @@ ajax('get','text.json',true,function(res){
 <p>●一般移动设备的浏览器都默认设置了一个布局视口 ,用于解决早期的PC端页面在手机上显示的问题。<br>
 ●<code>iOS</code>, <code>Android</code>基本都将这个视口分辨率设置为<code>980px</code> ,所以PC上的网页大多都能在手机上呈现,只不<br>
 过元素看上去很小,一般默认可以通过手动缩放网页。</p>
-<figure data-type="image" tabindex="245"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586311833048.png" alt="1586311833048" loading="lazy"></figure>
+<figure data-type="image" tabindex="315"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586311833048.png" alt="1586311833048" loading="lazy"></figure>
 <h4 id="12-视觉视口-visual-viewport">1.2 视觉视口  visual viewport</h4>
 <ul>
 <li>用户正在看到的网站的区域 ，注意：<mark>网站区域</mark></li>
 <li>可以通过缩放去操作视觉视口，但不会影响布局视口，布局视口保持原来的宽度</li>
 </ul>
-<figure data-type="image" tabindex="246"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586311863721.png" alt="1586311863721" loading="lazy"></figure>
+<figure data-type="image" tabindex="316"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586311863721.png" alt="1586311863721" loading="lazy"></figure>
 <h4 id="13-理想视口-ideal-viewport">1.3 理想视口  ideal viewport</h4>
 <ul>
 <li>为了网站在移动端最理想的浏览和宽度而设定</li>
@@ -2675,32 +3046,32 @@ ajax('get','text.json',true,function(res){
 <pre><code class="language-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0,
     minimum-sacle=1.0,user-scalable=no&quot;&gt;
 </code></pre>
-<figure data-type="image" tabindex="247"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586335693141.png" alt="1586335693141" loading="lazy"></figure>
+<figure data-type="image" tabindex="317"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586335693141.png" alt="1586335693141" loading="lazy"></figure>
 <h3 id="3-二倍图">3. 二倍图</h3>
 <h4 id="31-多倍图">3.1 多倍图</h4>
-<figure data-type="image" tabindex="248"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403480917.png" alt="1586403480917" loading="lazy"></figure>
-<figure data-type="image" tabindex="249"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403489038.png" alt="1586403489038" loading="lazy"></figure>
+<figure data-type="image" tabindex="318"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403480917.png" alt="1586403480917" loading="lazy"></figure>
+<figure data-type="image" tabindex="319"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403489038.png" alt="1586403489038" loading="lazy"></figure>
 <h4 id="32-背景缩放-background-size">3.2  背景缩放  background-size</h4>
 <p>background-size 属性规定背景图像的尺寸</p>
 <pre><code class="language-html">background-size:背景图片宽度 背景图片高度；
 </code></pre>
-<figure data-type="image" tabindex="250"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403848765.png" alt="1586403848765" loading="lazy"></figure>
+<figure data-type="image" tabindex="320"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586403848765.png" alt="1586403848765" loading="lazy"></figure>
 <h3 id="4-单独移动端页面主流">4.  单独移动端页面（主流）</h3>
 <p>通常情况下，网站域名前面加m(mobile)可以打开移动端。通过判断设备，如果是移动端设备打开，则跳转移动端页面</p>
 <h3 id="5-响应式兼容pc移动端">5. 响应式兼容PC移动端</h3>
 <h3 id="6移动端-技术解决方案">6.移动端 技术解决方案</h3>
 <h4 id="61-css-初始化-normalizecss">6.1 css 初始化  <code>normalize.css</code></h4>
-<figure data-type="image" tabindex="251"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586404657288.png" alt="1586404657288" loading="lazy"></figure>
+<figure data-type="image" tabindex="321"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586404657288.png" alt="1586404657288" loading="lazy"></figure>
 <p>官网：<a href="http://necolas.github.io/normalize.css/">http://necolas.github.io/normalize.css/</a></p>
 <h4 id="62-css3-盒子模型box-sizing">6.2   CSS3 盒子模型box-sizing</h4>
-<figure data-type="image" tabindex="252"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410929396.png" alt="1586410929396" loading="lazy"></figure>
-<figure data-type="image" tabindex="253"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410937545.png" alt="1586410937545" loading="lazy"></figure>
-<figure data-type="image" tabindex="254"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410943253.png" alt="1586410943253" loading="lazy"></figure>
+<figure data-type="image" tabindex="322"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410929396.png" alt="1586410929396" loading="lazy"></figure>
+<figure data-type="image" tabindex="323"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410937545.png" alt="1586410937545" loading="lazy"></figure>
+<figure data-type="image" tabindex="324"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586410943253.png" alt="1586410943253" loading="lazy"></figure>
 <h4 id="63-特殊样式">6.3  特殊样式</h4>
-<figure data-type="image" tabindex="255"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586574008032.png" alt="1586574008032" loading="lazy"></figure>
+<figure data-type="image" tabindex="325"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586574008032.png" alt="1586574008032" loading="lazy"></figure>
 <h3 id="7-移动端常见布局">7. 移动端常见布局</h3>
 <h4 id="71-移动端技术选型">7.1  移动端技术选型</h4>
-<figure data-type="image" tabindex="256"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586574144267.png" alt="1586574144267" loading="lazy"></figure>
+<figure data-type="image" tabindex="326"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586574144267.png" alt="1586574144267" loading="lazy"></figure>
 <h5 id="711-流式布局百分比布局">7.1.1 流式布局（百分比布局）</h5>
 <ul>
 <li>流式布局，百分比布局，也称非固定像素布局</li>
@@ -2741,19 +3112,19 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <hr>
 <h5 id="1-flex-direction-属性决定主轴的方向即项目的排列方向">1. flex-direction 属性决定主轴的方向（即项目的排列方向）</h5>
 <p><mark>注：主轴和侧轴是会变化的，就看flex-direction设置谁为主轴，剩下的是侧轴。子元素是跟主轴来排列的</mark></p>
-<figure data-type="image" tabindex="257"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586912678353.png" alt="1586912678353" loading="lazy"></figure>
+<figure data-type="image" tabindex="327"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586912678353.png" alt="1586912678353" loading="lazy"></figure>
 <h5 id="2-justify-content-设置主轴上的子元素排列方式">2 .justify-content :设置主轴上的子元素排列方式</h5>
 <p>justify-content属性定义了项目在主轴上的对齐方式（<strong>注：使用这个属性前一定确定好主轴是哪个</strong>）</p>
-<figure data-type="image" tabindex="258"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586913418185.png" alt="1586913418185" loading="lazy"></figure>
+<figure data-type="image" tabindex="328"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586913418185.png" alt="1586913418185" loading="lazy"></figure>
 <h5 id="3flex-wrap-设置子元素是否换行">3.flex-wrap :设置子元素是否换行</h5>
 <p>默认情况下，项目都排在一条线上。flew-wrap属性定义，felx布局中默认是不换行的</p>
-<figure data-type="image" tabindex="259"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586914506942.png" alt="1586914506942" loading="lazy"></figure>
+<figure data-type="image" tabindex="329"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586914506942.png" alt="1586914506942" loading="lazy"></figure>
 <h5 id="4-align-items-设置侧轴上的子元素排列方式单行">4. align- items :设置侧轴上的子元素排列方式(单行)</h5>
 <p>控制子项在侧轴（默认是y轴）上的排列方式 在子项为单项的时候使用</p>
-<figure data-type="image" tabindex="260"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586914753884.png" alt="1586914753884" loading="lazy"></figure>
+<figure data-type="image" tabindex="330"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586914753884.png" alt="1586914753884" loading="lazy"></figure>
 <h5 id="5-align-content-设置侧轴上的子元素的排列方式多行">5. align-content :设置侧轴上的子元素的排列方式(多行)</h5>
 <p>设置子项在侧轴上的排列方式并且只能用于子项出现换行的情况（多行)，在单行下是没有效果滴</p>
-<figure data-type="image" tabindex="261"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586950822887.png" alt="1586950822887" loading="lazy"></figure>
+<figure data-type="image" tabindex="331"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586950822887.png" alt="1586950822887" loading="lazy"></figure>
 <p>align-content和align-items 的区别</p>
 <ul>
 <li>
@@ -2764,10 +3135,10 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 </li>
 </ul>
 <h5 id="6flex-flow-复合属性">6.flex-flow :复合属性</h5>
-<figure data-type="image" tabindex="262"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586956962601.png" alt="1586956962601" loading="lazy"></figure>
+<figure data-type="image" tabindex="332"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1586956962601.png" alt="1586956962601" loading="lazy"></figure>
 <h4 id="4常用子项属性">4.常用子项属性</h4>
 <h5 id="41-flex-属性">4.1  flex 属性</h5>
-<figure data-type="image" tabindex="263"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587001088867.png" alt="1587001088867" loading="lazy"></figure>
+<figure data-type="image" tabindex="333"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587001088867.png" alt="1587001088867" loading="lazy"></figure>
 <h5 id="42-align-self-控制子项在侧轴上的排列方式">4.2  align-self 控制子项在侧轴上的排列方式</h5>
 <p>align-self属性允许单个项目有其他项目不样的对齐方式,可覆盖align-items属性。默认值为auto ,示继承父元素的align-items属性,如果没有元素,则等同于stretch。</p>
 <h5 id="43-order-属性定义项目的排列顺序">4.3  order 属性定义项目的排列顺序</h5>
@@ -2775,52 +3146,52 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <p>注：和z-index不一样</p>
 <h2 id="二-rem-适配布局">二. rem 适配布局</h2>
 <h3 id="1-rem-基础">1. rem 基础</h3>
-<figure data-type="image" tabindex="264"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587435984784.png" alt="1587435984784" loading="lazy"></figure>
+<figure data-type="image" tabindex="334"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587435984784.png" alt="1587435984784" loading="lazy"></figure>
 <p><mark>优势：通过修改HTML里面的文字大小来改变页面中元素的大小可以整体控制</mark></p>
 <h3 id="2-媒体查询">2. 媒体查询</h3>
 <h4 id="21媒体查询定义">2.1媒体查询定义</h4>
 <p>媒体查询( Media Query )是CSS3新语法。</p>
-<figure data-type="image" tabindex="265"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436528311.png" alt="1587436528311" loading="lazy"></figure>
+<figure data-type="image" tabindex="335"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436528311.png" alt="1587436528311" loading="lazy"></figure>
 <h4 id="22-语法规范">2.2 语法规范</h4>
-<figure data-type="image" tabindex="266"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436648863.png" alt="1587436648863" loading="lazy"></figure>
+<figure data-type="image" tabindex="336"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436648863.png" alt="1587436648863" loading="lazy"></figure>
 <h5 id="1-mediatype-媒体类型">1. mediatype  媒体类型</h5>
-<figure data-type="image" tabindex="267"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436767807.png" alt="1587436767807" loading="lazy"></figure>
+<figure data-type="image" tabindex="337"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436767807.png" alt="1587436767807" loading="lazy"></figure>
 <h5 id="2-关键字">2.   关键字</h5>
-<figure data-type="image" tabindex="268"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436868917.png" alt="1587436868917" loading="lazy"></figure>
+<figure data-type="image" tabindex="338"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436868917.png" alt="1587436868917" loading="lazy"></figure>
 <h5 id="3-媒体特性">3. 媒体特性</h5>
-<figure data-type="image" tabindex="269"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436918135.png" alt="1587436918135" loading="lazy"></figure>
+<figure data-type="image" tabindex="339"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587436918135.png" alt="1587436918135" loading="lazy"></figure>
 <h5 id="4-引入资源">4. 引入资源</h5>
 <p>当样式比较繁多的时候,我们可以针对不同的媒体使用不同stylesheets (样式表)。</p>
 <p>原理,就是直接在link中判断设备的尺寸,然后引用不同的css文件。</p>
-<figure data-type="image" tabindex="270"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587781811160.png" alt="1587781811160" loading="lazy"></figure>
+<figure data-type="image" tabindex="340"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587781811160.png" alt="1587781811160" loading="lazy"></figure>
 <h3 id="3-less">3. less</h3>
 <h4 id="31-维护css的弊端">3.1  维护css的弊端</h4>
-<figure data-type="image" tabindex="271"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587782055398.png" alt="1587782055398" loading="lazy"></figure>
+<figure data-type="image" tabindex="341"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587782055398.png" alt="1587782055398" loading="lazy"></figure>
 <h4 id="32-less-基础">3.2  less 基础</h4>
 <h5 id="1-介绍">1. 介绍</h5>
-<figure data-type="image" tabindex="272"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587782385139.png" alt="1587782385139" loading="lazy"></figure>
+<figure data-type="image" tabindex="342"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587782385139.png" alt="1587782385139" loading="lazy"></figure>
 <h5 id="2-less-变量">2. less 变量</h5>
-<figure data-type="image" tabindex="273"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587783342994.png" alt="1587783342994" loading="lazy"></figure>
+<figure data-type="image" tabindex="343"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587783342994.png" alt="1587783342994" loading="lazy"></figure>
 <h5 id="3-less-编译">3. less 编译</h5>
 <p>本质上, Less包含-自定义的语法及-个解析器,用户根据这些语法定义自己的样式规则,这些规则最终会通过解析器,编译生成对应的CSS文件。<br>
 所以,我们需要把我们的less文件,编译生成为css文件,这样我们的html页面才能使用。</p>
 <h5 id="4-less-嵌套">4. less 嵌套</h5>
 <p>less嵌套 ： 子元素样式直接写在父元素里面</p>
-<figure data-type="image" tabindex="274"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587815493170.png" alt="1587815493170" loading="lazy"></figure>
-<figure data-type="image" tabindex="275"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587815652296.png" alt="1587815652296" loading="lazy"></figure>
+<figure data-type="image" tabindex="344"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587815493170.png" alt="1587815493170" loading="lazy"></figure>
+<figure data-type="image" tabindex="345"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587815652296.png" alt="1587815652296" loading="lazy"></figure>
 <h5 id="5-less-运算">5. <mark>less 运算</mark></h5>
 <p>任何数字、颜色或者变量都可以参与运算。less提供了加减乘除算数运算</p>
-<figure data-type="image" tabindex="276"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816025554.png" alt="1587816025554" loading="lazy"></figure>
-<figure data-type="image" tabindex="277"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816079593.png" alt="1587816079593" loading="lazy"></figure>
+<figure data-type="image" tabindex="346"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816025554.png" alt="1587816025554" loading="lazy"></figure>
+<figure data-type="image" tabindex="347"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816079593.png" alt="1587816079593" loading="lazy"></figure>
 <h3 id="4-rem-适配方案">4. rem  适配方案</h3>
 <p>1.让一些不能等比自适应的元素,达到当设备尺寸发生改变的时候,等比例适配当前设备。<br>
 2.使用媒体查询根据不同设备按比例设置html的字体大小，然后页面元素使用rem做尺寸单位,当html字体大小变化，元素尺寸也会发生变化,从而达到等比缩放的适配。</p>
 <h5 id="1-rem-实际开发适配方案">1. rem 实际开发适配方案</h5>
-<figure data-type="image" tabindex="278"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816470594.png" alt="1587816470594" loading="lazy"></figure>
+<figure data-type="image" tabindex="348"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816470594.png" alt="1587816470594" loading="lazy"></figure>
 <h5 id="2-rem-适配方案技术使用">2. rem 适配方案技术使用</h5>
-<figure data-type="image" tabindex="279"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816523496.png" alt="1587816523496" loading="lazy"></figure>
-<figure data-type="image" tabindex="280"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587956275015.png" alt="1587956275015" loading="lazy"></figure>
-<figure data-type="image" tabindex="281"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1588235723539.png" alt="1588235723539" loading="lazy"></figure>
+<figure data-type="image" tabindex="349"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587816523496.png" alt="1587816523496" loading="lazy"></figure>
+<figure data-type="image" tabindex="350"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587956275015.png" alt="1587956275015" loading="lazy"></figure>
+<figure data-type="image" tabindex="351"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1588235723539.png" alt="1588235723539" loading="lazy"></figure>
 <h2 id="三响应式布局bootstrap-2020128-25">三.响应式布局Bootstrap    2020.1.28-2.5</h2>
 <h3 id="1列嵌套">1.列嵌套</h3>
 <p>​</p>
@@ -2831,12 +3202,12 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <h3 id="4响应式工具">4.响应式工具</h3>
 <h4 id="工具类针对不同的设备大小展示或隐藏页面内容">工具类针对不同的设备大小展示或隐藏页面内容</h4>
 <p>​</p>
-<figure data-type="image" tabindex="282"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1580440319261.png" alt="580440319261" loading="lazy"></figure>
+<figure data-type="image" tabindex="352"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1580440319261.png" alt="580440319261" loading="lazy"></figure>
 <h4 id="相反visible-xs-visible-sm显示页面内容">相反，visible-xs  ,visible-sm，，，显示页面内容</h4>
 <h3 id="5阿里百秀项目实战">5.阿里百秀项目实战</h3>
 <h1 id="开发经验-950px310px">开发经验   <code>950px*310px</code></h1>
 <h3 id="1清除元素的默认内外边距">1.<mark>清除元素的默认内外边距</mark></h3>
-<figure data-type="image" tabindex="283"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582356033472.png" alt="1582356033472" loading="lazy"></figure>
+<figure data-type="image" tabindex="353"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582356033472.png" alt="1582356033472" loading="lazy"></figure>
 <pre><code class="language-HTML">*{
  padding：0；
  margin：0；
@@ -2845,7 +3216,7 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <p>注意:<br>
 ●行内元素为了照顾兼容性，尽量只设置左右内外边距， 不要设置上下内外边距。</p>
 <h3 id="2去掉列表默认样式">2.去掉列表默认样式</h3>
-<figure data-type="image" tabindex="284"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582425223117.png" alt="1582425223117" loading="lazy"></figure>
+<figure data-type="image" tabindex="354"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582425223117.png" alt="1582425223117" loading="lazy"></figure>
 <h3 id="3css书写规范">3.css书写规范</h3>
 <h4 id="31空格规范">3.1空格规范</h4>
 <p><mark>选择器与{之间必须包含空格</mark></p>
@@ -2853,14 +3224,14 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <h4 id="32-选择器规范">3.2 选择器规范</h4>
 <p>并集选择器，每个选择器另起一行</p>
 <p>一般情况情况下，选择器的嵌套层级应不大于3级，位置靠后的限定条件应尽可能精确。</p>
-<figure data-type="image" tabindex="285"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582440092017.png" alt="1582440092017" loading="lazy"></figure>
+<figure data-type="image" tabindex="355"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582440092017.png" alt="1582440092017" loading="lazy"></figure>
 <h3 id="4导航栏">4.导航栏</h3>
-<figure data-type="image" tabindex="286"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582531537809.png" alt="1582531537809" loading="lazy"></figure>
+<figure data-type="image" tabindex="356"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582531537809.png" alt="1582531537809" loading="lazy"></figure>
 <p>排列整体用li</p>
 <p>导航栏字不一样多，不要设宽度，而是用padding挤开</p>
 <p>量高度的时候不要量边框</p>
 <h3 id="5css属性书写顺序">5.<code>css</code>属性书写顺序</h3>
-<figure data-type="image" tabindex="287"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582698631518.png" alt="1582698631518" loading="lazy"></figure>
+<figure data-type="image" tabindex="357"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1582698631518.png" alt="1582698631518" loading="lazy"></figure>
 <h3 id="6子盒子和父盒子子盒子大于父盒子">6.子盒子和父盒子（子盒子大于父盒子）</h3>
 <p>子盒子是可以大于父盒子的</p>
 <h3 id="7-网页布局总结">7.  网页布局总结</h3>
@@ -2881,10 +3252,10 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 </code></pre>
 <h4 id="2-字体图标使用流程">2.   字体图标使用流程</h4>
 <p>总体来说，字体图标按照如下流程：</p>
-<figure data-type="image" tabindex="288"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583149842507.png" alt="1583149842507" loading="lazy"></figure>
+<figure data-type="image" tabindex="358"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583149842507.png" alt="1583149842507" loading="lazy"></figure>
 <h4 id="3-设计字体图标">3. 设计字体图标</h4>
 <p>假如图标是我们公司单独设计，那就需要第一步了，这个属于UI设计人员的工作， 他们在 illustrator 或 Sketch 这类矢量图形软件里创建 icon图标， 比如下图：</p>
-<figure data-type="image" tabindex="289"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583149860808.png" alt="1583149860808" loading="lazy"></figure>
+<figure data-type="image" tabindex="359"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583149860808.png" alt="1583149860808" loading="lazy"></figure>
 <p>之后保存为svg格式，然后给我们前端人员就好了。</p>
 <p>其实第一步，我们不需要关心，只需要给我们这些图标就可以了，如果图标是大众的，网上本来就有的，可以直接跳过第一步，进入第三步。</p>
 <h4 id="4-上传生成字体包">4. 上传生成字体包</h4>
@@ -2907,7 +3278,7 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <ol start="2">
 <li>
 <p>html标签内里面添加结构</p>
-<figure data-type="image" tabindex="290"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583150000183.png" alt="1583150000183" loading="lazy"></figure>
+<figure data-type="image" tabindex="360"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1583150000183.png" alt="1583150000183" loading="lazy"></figure>
 <pre><code class="language-html">&lt;span&gt;&lt;/span&gt; 
 </code></pre>
 </li>
@@ -2958,7 +3329,7 @@ flex-flow :复合属性,相当于同时设置了flex direction和flex-wrap</p>
 <h2 id="3-携程网首页-202048-420">3. 携程网首页  2020.4.8-4.20</h2>
 <h4 id="1-背景线性渐变">1. 背景线性渐变</h4>
 <p>语法1</p>
-<figure data-type="image" tabindex="291"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587347104641.png" alt="1587347104641" loading="lazy"></figure>
+<figure data-type="image" tabindex="361"><img src="https://ww13606467972.github.io/mylove.github.io//post-images/1587347104641.png" alt="1587347104641" loading="lazy"></figure>
 <p>背景渐变必须添加浏览器私有前缀，起始方向可以是:方位名词或者度数如果省略默认就是top</p>
 <h4 id="2-监听过渡完成事件">2. 监听过渡完成事件</h4>
 <p>transitionend</p>
